@@ -13,10 +13,11 @@ int main()
 
 	sf::Sprite hero_sprite;
 	hero_sprite.setTexture(hero_texture);
-	hero_sprite.setTextureRect(sf::IntRect(55, 70, 100, 100));
+	hero_sprite.setTextureRect(sf::IntRect(2, 614+200, 201, 813));
 	hero_sprite.setPosition(0, 0);
 
 	sf::Clock clock;
+	float currentFrame = 0;
 
 	while (window.isOpen())
 	{
@@ -32,9 +33,19 @@ int main()
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::A))
+		{
+			currentFrame += 0.005 * time;
+			if (currentFrame > 3) currentFrame -= 3;
+			hero_sprite.setTextureRect(sf::IntRect(2*time, 614 + 200, -201, 813));
 			hero_sprite.move(-0.1 * time, 0);
+		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
+		{
+			currentFrame += 0.005 * time;
+			if (currentFrame > 3) currentFrame -= 3;
+			hero_sprite.setTextureRect(sf::IntRect(2 * time, 614 + 200, 201, 813));
 			hero_sprite.move(0.1 * time, 0);
+		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
 			hero_sprite.move(0, -0.1 * time);
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::S))
