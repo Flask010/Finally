@@ -36,14 +36,14 @@ int main()
 		{
 			currentFrame += 0.005 * time;
 			if (currentFrame > 3) currentFrame -= 3;
-			hero_sprite.setTextureRect(sf::IntRect(2*time, 614 + 200, -201, 813));
+			hero_sprite.setTextureRect(sf::IntRect(2*time, 614 + 200, 201, 813));
 			hero_sprite.move(-0.1 * time, 0);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::D))
 		{
 			currentFrame += 0.005 * time;
 			if (currentFrame > 3) currentFrame -= 3;
-			hero_sprite.setTextureRect(sf::IntRect(2 * time, 614 + 200, 201, 813));
+			hero_sprite.setTextureRect(sf::IntRect(2 * time, 614 + 200, 405, 813));
 			hero_sprite.move(0.1 * time, 0);
 		}
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::W))
